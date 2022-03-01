@@ -1,30 +1,19 @@
-/* Crea una función que reciba por parámetro un array y compruebe si existen elementos duplicados, 
-en caso que existan los elimina para retornar un array sin los elementos duplicados.
+
+/* Crea una función que reciba por parámetro un array y cuando es un valor number lo sume y de lo contrario cuente la longitud del string y lo sume.
 Puedes usar este array para probar tu función: */
 
-let duplicates = [
-    'sushi',
-    'pizza',
-    'burger',
-    'potatoe',
-    'pasta',
-    'ice-cream',
-    'pizza',
-    'chicken',
-    'onion rings',
-    'pasta',
-    'soda'
-  ];
+const mixedElements = [6, 1, 'Rayo', 1, 'vallecano', '10', 'upgrade', 8, 'hub'];
+function averageWord(array) {
+  let totalSum=0;
+    for (let i = 0; i < array.length; i++) {
+        if (typeof array[i] === 'string'){
+            totalSum += array[i].length;
+            console.log(totalSum)
+        } else {
+            totalSum += array[i];
+            console.log(totalSum);
+        }
+    } return totalSum;
+}
 
-  function removeDuplicates(array) {
-      for (let i = 0; i < array.length; i++) {
-          for (let j = i+1; j < array.length; j++){
-              if (array[i] === array[j]){
-                  array.splice(j,1)
-              }    
-          }
-      } return array;
-  }
-
-  console.log(removeDuplicates(duplicates));
-  
+console.log(averageWord(mixedElements));
